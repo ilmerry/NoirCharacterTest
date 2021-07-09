@@ -1,2 +1,2 @@
 # NoirCharacterTest
-Web creation based on mbti
+Psychological test creation based on mbti
