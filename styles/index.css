@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+body{
+    height: 100vh;
+    background-color: rgb(36, 39, 38);
+    font-family: 'Song Myung', serif;
+}
+.css-header{
+    display: block;
+}
+.css-title{
+    margin-top: 15vh;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+.css-border{
+    background-color: white;
+    margin-top: 5vh;
+    margin-left: 57vh;
+    width: 45%;
+    height: 80vh;
+    border-radius: 10px;
+}
+.css-start{
+    margin-top: 6vh;
+    margin-left: 31vh;
+    padding: 16px 48px;
+    font-size: large;
+    background-color: white;
+    color: black;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Song Myung', serif;
+}
+.css-start:hover{
+    transition-duration: 0.4s;
+    background-color: #3d3d3d;
+    color: white;
+}
+.css-share{
+    margin-top: 3vh;
+    margin-left: 32vh;
+    padding: 16px 48px;
+    font-size: large;
+    background-color: white;
+    color: black;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Song Myung', serif;
+}
+
+.css-share:hover{
+    transition-duration: 0.4s;
+    background-color: #3d3d3d;
+    color: white;
+}
+
+.css-man{
+    width: 25vh;
+    margin-top: 10vh;
+    margin-left: 33vh;
+}
