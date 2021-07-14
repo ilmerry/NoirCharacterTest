@@ -28,17 +28,10 @@ body{
     border-radius: 10px;
 }
 
-.css-man{
+.css-choice1{
     position: absolute;
-    width: 20%;
-    margin-top: 10vh;
-    margin-left: 40%;
-}
-
-.css-start{
-    position: absolute;
-    margin-top: 45vh;
-    margin-left: 38%;
+    margin-top: 20vh;
+    margin-left: 42%;
     padding: 16px 48px;
     font-size: large;
     background-color: white;
@@ -49,10 +42,10 @@ body{
     font-family: 'Song Myung', serif;
 }
 
-.css-share{
+.css-choice2{
     position: absolute;
-    margin-top: 53vh;
-    margin-left: 39%;
+    margin-top: 36vh;
+    margin-left: 42%;
     padding: 16px 48px;
     font-size: large;
     background-color: white;
