@@ -18,27 +18,29 @@ body{
 
 .css-border{
     display: block;
-    position: relative;
+    position: absolute;
     background-color: white;
-    margin-top: 5vh;
-    margin-left: 20%;
-    margin-right: 20%;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
     width: 60%;
-    height: 80vh;
+    height: 70vh;
     border-radius: 10px;
 }
 
 .css-man{
     position: absolute;
-    width: 20%;
-    margin-top: 10vh;
-    margin-left: 40%;
+    transform: translate(-50%, -50%);
+    top: 35%;
+    left: 50%;
+    width: 25vh;
 }
 
 .css-start{
     position: absolute;
-    margin-top: 45vh;
-    margin-left: 38%;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
     padding: 16px 48px;
     font-size: large;
     background-color: white;
@@ -51,8 +53,9 @@ body{
 
 .css-share{
     position: absolute;
-    margin-top: 53vh;
-    margin-left: 39%;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
     padding: 16px 48px;
     font-size: large;
     background-color: white;
@@ -71,4 +74,12 @@ body{
 
 @media all and (max-width: 1280px){
 
+}
+
+.css-license{
+    position:absolute;
+    top: 88%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    font-size: 12px;
 }

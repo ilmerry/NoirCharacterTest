@@ -18,21 +18,22 @@ body{
 
 .css-border{
     display: block;
-    position: relative;
+    position: absolute;
     background-color: white;
-    margin-top: 5vh;
-    margin-left: 20%;
-    margin-right: 20%;
+    left: 50%;
+    top: 60%;
+    transform: translate(-50%, -50%);
     width: 60%;
-    height: 80vh;
+    height: 70vh;
     border-radius: 10px;
 }
 
 .css-choice1{
     position: absolute;
-    margin-top: 20vh;
-    margin-left: 42%;
-    padding: 16px 48px;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+    padding: 20px 100px;
     font-size: large;
     background-color: white;
     color: black;
@@ -44,9 +45,10 @@ body{
 
 .css-choice2{
     position: absolute;
-    margin-top: 36vh;
-    margin-left: 42%;
-    padding: 16px 48px;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+    padding: 20px 100px;
     font-size: large;
     background-color: white;
     color: black;
@@ -56,7 +58,7 @@ body{
     font-family: 'Song Myung', serif;
 }
 
-.css-start:hover, .css-share:hover{
+.css-choice1:hover, .css-choice2:hover{
     transition-duration: 0.4s;
     background-color: #3d3d3d;
     color: white;
@@ -64,4 +66,12 @@ body{
 
 @media all and (max-width: 1280px){
 
+}
+
+.css-license{
+    position:absolute;
+    top: 88%;
+    left: 50%;
+    transform:translate(-50%, -50%);
+    font-size: 12px;
 }
