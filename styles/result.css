@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+body{
+    width:100%;
+    background-color: rgb(36, 39, 38);
+    font-family: 'Song Myung', serif;
+}
+
+.css-header{
+    display:block;
+}
+
+.css-title{
+    margin-top: 15vh;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+}
+
+.css-main{
+    display:block;
+}
+
+.css-border{
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    top: 105%;
+    transform: translate(-50%, -50%);
+    margin-top: 70px;
+    width: 60%;
+    height: 180vh;
+    border-radius: 10px;
+}
+
+.css-characterImg{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 15%;
+    left: 50%;
+    width: 25vh;
+}
+
+.css-result{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 30%;
+    left: 50%;
+    padding: 16px 48px;
+    font-size: large;
+    color: black;
+    padding: 5px;
+    font-family: 'Song Myung', serif;
+}
+
+.css-share{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 70%;
+    left: 50%;
+    padding: 16px 48px;
+    font-size: large;
+    background-color: white;
+    color: black;
+    border: 2px solid #3d3d3d;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Song Myung', serif;
+}
+
+.css-start:hover, .css-share:hover{
+    transition-duration: 0.4s;
+    background-color: #3d3d3d;
+    color: white;
+}
+
+@media all and (max-width: 1280px){
+
+}
+
+.css-footer{
+    display: block;
+}
+
+.css-license{
+    position:absolute;
+    font-size: 12px;
+    color:white;
+    left: 43%;
+    top: 230%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
