@@ -17,13 +17,14 @@ body{
 }
 
 .css-border{
+    /* 흰색 박스 */
     display: block;
     position: absolute;
     background-color: white;
     left: 50%;
     top: 60%;
     transform: translate(-50%, -50%);
-    width: 60%;
+    width: 80vh;
     height: 70vh;
     border-radius: 10px;
 }
