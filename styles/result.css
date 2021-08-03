@@ -32,7 +32,7 @@ body{
     border-radius: 10px;
 }
 
-.css-characterImg{
+.css-resultImg{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 16%;
@@ -40,7 +40,7 @@ body{
     width: 25vh;
 }
 
-.css-result{
+.css-resultTitle{
     position: absolute;
     transform: translate(-50%, -50%);
     top: 30%;
