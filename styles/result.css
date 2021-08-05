@@ -54,13 +54,12 @@ body{
 .css-resultExplain{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 35%;
+    top: 50%;
     left: 50%;
-    font-size: large;
+    width: 75%;
     color: black;
-    font-size: 21px;
+    font-size: 20px;
     font-family: 'Song Myung', serif;
-
 }
 
 .css-bestMatch{
