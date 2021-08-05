@@ -43,10 +43,10 @@ body{
 .css-resultTitle{
     position: absolute;
     transform: translate(-50%, -50%);
-    top: 28%;
+    top: 29%;
     left: 50%;
     color: black;
-    font-size: 16px;
+    font-size: 21px;
     opacity: 0.5;
     font-family: 'Song Myung', serif;
 }
@@ -61,6 +61,32 @@ body{
     font-size: 21px;
     font-family: 'Song Myung', serif;
 
+}
+
+.css-bestMatch{
+    position: absolute;
+    background-color: rgb(36, 39, 38);
+    left: 30%;
+    top: 74%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    color:white;
+}
+
+.css-worstMatch{
+    position: absolute;
+    background-color: rgb(36, 39, 38);
+    left: 70%;
+    top: 74%;
+    transform: translate(-50%, -50%);
+    width: 20%;
+    border-radius: 10px;
+    padding: 5px 10px;
+    text-align: center;
+    color:white;
 }
 
 .css-restart{
