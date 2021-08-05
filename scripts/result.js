@@ -1,7 +1,10 @@
 const restartButton = document.querySelector(".js-restart"),
     resultImg = document.querySelector(".js-resultImg"),
     resultTitle = document.querySelector(".js-resultTitle"),
-    resultExplain = document.querySelector(".js-resultExplain");
+    resultExplain = document.querySelector(".js-resultExplain"),
+    bestMatchImg = document.querySelector(".js-bestMatchImg"),
+    worstMatchImg = document.querySelector(".js-worstMatchImg");
+
 
 const title_LIST = {
     "INTJ" : "조직의 우두머리",
@@ -40,11 +43,38 @@ const expain_LIST = [
     "설명16"
 ];
 
+const match_LIST = [
+    {best : "ENFP", worst : "ESFJ"},
+    {best : "ISFP", worst : "INFP"},
+    {best : "ENTP", worst : "ISFP"},
+    {best : "ESTP", worst : "ENFP"},
+    {best : "ESFP", worst : "ENFJ"},
+    {best : "ESTJ", worst : "INFJ"},
+    {best : "ENTJ", worst : "ESTJ"},
+    {best : "INTP", worst : "ISTJ"},
+    {best : "ESFJ", worst : "ESTP"},
+    {best : "ENFJ", worst : "ENTJ"},
+    {best : "INFP", worst : "INTP"},
+    {best : "INTJ", worst : "ISFJ"},
+    {best : "INFJ", worst : "ESFP"},
+    {best : "ISFJ", worst : "ISTP"},
+    {best : "ISTJ", worst : "ENTP"},
+    {best : "ISTP", worst : "INTJ"}
+];
+
 const USER_MBTI = "currentMBTI";
 
 function handleRestart(){
     const link = '/questions.html';
     location.href = link;
+}
+
+function worstMatchGreeting(idx){
+    worstMatchImg.src = "/images/" +  match_LIST[idx].worst + ".png";
+}
+
+function bestMatchGreeting(idx){
+    bestMatchImg.src = "/images/" +  match_LIST[idx].best + ".png";
 }
 
 function resultGreeting(){
@@ -56,6 +86,10 @@ function resultGreeting(){
         if(mbti == userMBTI){
             resultTitle.innerText = title_LIST[mbti];
             resultExplain.innerText = expain_LIST[index];
+
+            bestMatchGreeting(index);
+            worstMatchGreeting(index);
+
             return;
         }
         index++;

@@ -71,7 +71,7 @@ body{
     transform: translate(-50%, -50%);
     width: 20%;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 20px;
     text-align: center;
     color:white;
 }
@@ -84,14 +84,33 @@ body{
     transform: translate(-50%, -50%);
     width: 20%;
     border-radius: 10px;
-    padding: 5px 10px;
+    padding: 5px 20px;
     text-align: center;
     color:white;
+}
+
+.css-bestMatchImg{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    top:320%;
+    left: 50%;
+    width: 20vh;
+}
+
+.css-worstMatchImg{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    margin-top: 10px;
+    top: 320%;
+    left: 50%;
+    width: 20vh;
 }
 
 .css-restart{
     position: absolute;
     transform: translate(-50%, -50%);
+    margin-top: 30px;
     top: 90%;
     left: 50%;
     width: 60%;
