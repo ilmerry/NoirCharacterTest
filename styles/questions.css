@@ -17,7 +17,10 @@ body{
 }
 
 .css-border{
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     position: absolute;
     background-color: white;
     left: 50%;
@@ -28,11 +31,29 @@ body{
     border-radius: 10px;
 }
 
-.css-choice1{
+.css-progressBar{
     position: absolute;
-    transform: translate(-50%, -50%);
-    top: 30%;
-    left: 50%;
+    top: 15%;
+    width: 70%;
+    height: 16px;
+    pointer-events: none;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.css-progressBar::-webkit-progress-bar{
+    background-color: rgb(185, 185, 185);
+    border-radius: 10px;
+}
+
+.css-progressBar::-webkit-progress-value{
+    background-color: rgb(55, 59, 58);
+    border-radius: 10px;
+}
+
+.css-choice1{
+    position: relative;
+    margin-bottom: 5px;
     width: 75%;
     padding: 20px 5%;
     font-size: large;
@@ -45,10 +66,8 @@ body{
 }
 
 .css-choice2{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 55%;
-    left: 50%;
+    position: relative;
+    margin-top: 5px;
     width: 75%;
     padding: 20px 5%;
     font-size: large;
