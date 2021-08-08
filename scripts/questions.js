@@ -46,10 +46,11 @@ choice2_LIST = [
 const USER_MBTI = "currentMBTI";
 const userChoice = [];
 let i = 0;
-let N = 0, S = 0, F = 0, T = 0, P = 0, J = 0;
+let I = 0, E = 0, N = 0, S = 0, F = 0, T = 0, P = 0, J = 0;
 let IorE, NorS, ForT, PorJ;
 
 function resultLoader(){
+    IorE = (I > E)? "I" : "E";
     NorS = (N > S)? "N" : "S";
     ForT = (F > T)? "F" : "T";
     PorJ = (P > J)? "P" : "J";
@@ -68,8 +69,8 @@ function resultJudgement(){
     for(i = 0; question_LIST[i]; i++){
         switch (i){
             case 0:
-                if(userChoice[i] == 1) IorE = "E";
-                else IorE = "I";
+                if(userChoice[i] == 1) E += 30;
+                else I += 30;
                 break;
             case 3: case 6: case 9:
                 if(userChoice[i] == 1) N += 30;
