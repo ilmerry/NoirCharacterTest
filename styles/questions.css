@@ -6,6 +6,15 @@ body{
     animation: fadein 2s;
 }
 
+@keyframes fadein {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 .css-header{
     display: block;
 }
@@ -30,15 +39,6 @@ body{
     width: 60%;
     height: 70vh;
     border-radius: 10px;
-}
-
-@keyframes fadein {
-    from{
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
 }
 
 .css-progressBar{

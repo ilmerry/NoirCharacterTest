@@ -92,9 +92,23 @@ function resultJudgement(){
     resultLoader();
 }
 
+function pgbarAnimation(){
+    const preval = pgbar.value;
+    let id = setInterval(frame, 10);
+    console.log(pgbar.value);
+
+    function frame(){
+        if(pgbar.value >= preval + 10){
+            clearInterval(id);
+        }else{
+            pgbar.value++;
+        }
+    }
+}
+
 function handleChoice1(){
     userChoice[i++] = 1;
-    pgbar.value += 10;
+    pgbarAnimation();
     
     if(question_LIST[i]){
         question.innerText = question_LIST[i];
@@ -109,8 +123,8 @@ function handleChoice1(){
 
 function handleChoice2(){
     userChoice[i++] = 2;
-    pgbar.value += 10;
-    
+    pgbarAnimation();
+
     if(question_LIST[i]){
         question.innerText = question_LIST[i];
         choice1.innerText = choice1_LIST[i];
