@@ -92,10 +92,24 @@ function resultJudgement(){
     resultLoader();
 }
 
+function fadeIn(){
+    let op = 0;
+    let id = setInterval(frame, 10);
+    
+    body.style.opacity = 0;
+    function frame(){
+        if(body.style.opacity == 1){
+            clearInterval(id);
+        } else{
+            op += 0.01;
+            body.style.opacity = op;
+        }
+    }
+}
+
 function pgbarAnimation(){
     const preval = pgbar.value;
     let id = setInterval(frame, 10);
-    console.log(pgbar.value);
 
     function frame(){
         if(pgbar.value >= preval + 10){
@@ -107,6 +121,7 @@ function pgbarAnimation(){
 }
 
 function handleChoice1(){
+    fadeIn();
     userChoice[i++] = 1;
     pgbarAnimation();
     
@@ -122,6 +137,7 @@ function handleChoice1(){
 }
 
 function handleChoice2(){
+    fadeIn();
     userChoice[i++] = 2;
     pgbarAnimation();
 
@@ -137,6 +153,7 @@ function handleChoice2(){
 }
 
 function init(){
+    fadeIn();
     question.innerText = question_LIST[0];
     choice1.innerText = choice1_LIST[0];
     choice2.innerText = choice2_LIST[0];
