@@ -93,18 +93,18 @@ function resultJudgement(){
 }
 
 function fadeIn(){
-    // let op = 0;
-    // let id = setInterval(frame, 10);
-    
-    // body.style.opacity = op;
-    // function frame(){
-    //     if(body.style.opacity == 1){
-    //         clearInterval(id);
-    //     } else{
-    //         op += 0.01;
-    //         body.style.opacity = op;
-    //     }
-    // }
+    let op = 0;
+    body.style.opacity = op;
+    let id = setInterval(frame, 10);
+
+    function frame(){
+        if(body.style.opacity == 1){
+            clearInterval(id);
+        } else{
+            op += 0.01;
+            body.style.opacity = op;
+        }
+    }
 }
 
 function pgbarAnimation(){
@@ -115,7 +115,7 @@ function pgbarAnimation(){
         if(pgbar.value >= preval + 10){
             clearInterval(id);
         }else{
-            pgbar.value++;
+            pgbar.value += 0.5;
         }
     }
 }
