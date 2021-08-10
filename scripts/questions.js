@@ -1,4 +1,5 @@
-const question = document.querySelector(".js-question"),
+const body = document.querySelector(".js-body"),
+    question = document.querySelector(".js-question"),
     pgbar = document.querySelector(".js-progressBar"),
     choice1 = document.querySelector(".js-choice1"),
     choice2 = document.querySelector(".js-choice2");
@@ -94,7 +95,6 @@ function resultJudgement(){
 function handleChoice1(){
     userChoice[i++] = 1;
     pgbar.value += 10;
-    pgbar.classList.add("progressbar");
     
     if(question_LIST[i]){
         question.innerText = question_LIST[i];
@@ -110,7 +110,7 @@ function handleChoice1(){
 function handleChoice2(){
     userChoice[i++] = 2;
     pgbar.value += 10;
-
+    
     if(question_LIST[i]){
         question.innerText = question_LIST[i];
         choice1.innerText = choice1_LIST[i];
