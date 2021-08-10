@@ -93,18 +93,18 @@ function resultJudgement(){
 }
 
 function fadeIn(){
-    let op = 0;
-    let id = setInterval(frame, 10);
+    // let op = 0;
+    // let id = setInterval(frame, 10);
     
-    body.style.opacity = 0;
-    function frame(){
-        if(body.style.opacity == 1){
-            clearInterval(id);
-        } else{
-            op += 0.01;
-            body.style.opacity = op;
-        }
-    }
+    // body.style.opacity = op;
+    // function frame(){
+    //     if(body.style.opacity == 1){
+    //         clearInterval(id);
+    //     } else{
+    //         op += 0.01;
+    //         body.style.opacity = op;
+    //     }
+    // }
 }
 
 function pgbarAnimation(){
