@@ -5,9 +5,9 @@ const body = document.querySelector(".js-body"),
     choice2 = document.querySelector(".js-choice2");
 
 const question_LIST = [
-    "내가 실제로 갱스터가 된다면",
-    "다른 조직과의 구역 다툼이 벌어졌을 때 나는",
-    "수상하지만 솔깃한 제의가 나에게 들어온다면",
+    "내가 실제로 마피아, 갱스터가 된다면(I/E)",
+    "다른 조직과의 구역 다툼이 벌어졌을 때 나는(F/T)",
+    "수상하지만 솔깃한 제의가 나에게 들어온다면()",
     "새로운 사업을 추진할 기회를 맞닥뜨렸을 때 나는",
     "스파이인 것이 들통난 부하가 내 사람이 되겠다고 한다",
     "야심차게 준비했던 사업이 결국 실패로 돌아갔을 때 나는",
@@ -92,20 +92,20 @@ function resultJudgement(){
     resultLoader();
 }
 
-function fadeIn(){
-    let op = 0;
-    body.style.opacity = op;
-    let id = setInterval(frame, 10);
+// function fadeIn(){
+//     let op = 0;
+//     body.style.opacity = op;
+//     let id = setInterval(frame, 10);
 
-    function frame(){
-        if(body.style.opacity == 1){
-            clearInterval(id);
-        } else{
-            op += 0.01;
-            body.style.opacity = op;
-        }
-    }
-}
+//     function frame(){
+//         if(body.style.opacity == 1){
+//             clearInterval(id);
+//         } else{
+//             op += 0.01;
+//             body.style.opacity = op;
+//         }
+//     }
+// }
 
 function pgbarAnimation(){
     const preval = pgbar.value;
@@ -121,7 +121,7 @@ function pgbarAnimation(){
 }
 
 function handleChoice1(){
-    fadeIn();
+    // fadeIn();
     userChoice[i++] = 1;
     pgbarAnimation();
     
@@ -137,7 +137,7 @@ function handleChoice1(){
 }
 
 function handleChoice2(){
-    fadeIn();
+    // fadeIn();
     userChoice[i++] = 2;
     pgbarAnimation();
 
@@ -153,7 +153,7 @@ function handleChoice2(){
 }
 
 function init(){
-    fadeIn();
+    // fadeIn();
     question.innerText = question_LIST[0];
     choice1.innerText = choice1_LIST[0];
     choice2.innerText = choice2_LIST[0];
