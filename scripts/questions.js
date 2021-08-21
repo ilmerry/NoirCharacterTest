@@ -2,7 +2,8 @@ const body = document.querySelector(".js-body"),
     question = document.querySelector(".js-question"),
     pgbar = document.querySelector(".js-progressBar"),
     choice1 = document.querySelector(".js-choice1"),
-    choice2 = document.querySelector(".js-choice2");
+    choice2 = document.querySelector(".js-choice2"),
+    backButton = document.querySelector(".js-backButton");
 
 const question_LIST = [
     "내가 실제로 마피아, 갱스터가 된다면(I/E)",
@@ -137,6 +138,10 @@ function handleChoice1(){
     
     choice1.addEventListener("click", handleChoice1);
     choice2.addEventListener("click", handleChoice2);
+    if(i >= 1){
+        backButton.style.visibility = "visible";
+    }
+    backButton.addEventListener("click", handleBackButton);
 }
 
 function handleChoice2(){
@@ -153,6 +158,26 @@ function handleChoice2(){
     
     choice1.addEventListener("click", handleChoice1);
     choice2.addEventListener("click", handleChoice2);
+    if(i >= 1){
+        backButton.style.visibility = "visible";
+    }
+    backButton.addEventListener("click", handleBackButton);
+}
+
+function handleBackButton(){
+    i--;
+    pgbar.value -= 10;
+
+    if(i >= 1){
+        question.innerText = question_LIST[i];
+        choice1.innerText = choice1_LIST[i];
+        choice2.innerText = choice2_LIST[i];
+    }else if(i == 0){
+        question.innerText = question_LIST[i];
+        choice1.innerText = choice1_LIST[i];
+        choice2.innerText = choice2_LIST[i];
+        backButton.style.visibility = "hidden";
+    }
 }
 
 function init(){
