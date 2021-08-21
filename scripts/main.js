@@ -2,10 +2,14 @@ const startButton = document.querySelector(".js-start"),
     shareButton = document.querySelector(".js-share");
 
 //미완성
-function handleShareClick(event){
-    event.preventDefault();
+function handleShareClick(){
+    const tmp = document.createElement('textarea');
+    tmp.value = window.location.href;
+    document.body.appendChild(tmp);
+    tmp.select();
+    document.execCommand('copy');
+    document.body.removeChild(tmp);
     
-	document.execCommand("copy");
 	alert("URL이 복사되었습니다"); 
 }
 
