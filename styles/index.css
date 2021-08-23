@@ -79,6 +79,8 @@ body{
 
 .css-license{
     position:absolute;
+    text-align: center;
+    opacity: 50%;
     top: 88%;
     left: 50%;
     transform:translate(-50%, -50%);
