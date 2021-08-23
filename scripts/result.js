@@ -1,9 +1,14 @@
 const restartButton = document.querySelector(".js-restart"),
     resultImg = document.querySelector(".js-resultImg"),
     resultTitle = document.querySelector(".js-resultTitle"),
+    ratings = document.querySelector(".js-ratings"),
     resultExplain = document.querySelector(".js-resultExplain"),
     bestMatchImg = document.querySelector(".js-bestMatchImg"),
     worstMatchImg = document.querySelector(".js-worstMatchImg");
+
+const brainRate = ratings.querySelector(".js-brainRate"),
+    powerRate = ratings.querySelector(".js-powerRate"),
+    relRate = ratings.querySelector(".js-relRate");
 
 
 const title_LIST = {
@@ -24,10 +29,46 @@ const title_LIST = {
     "ESFP" : "조직의 분위기메이커",
     "ESFJ" : "조직의 대모"
 };
-const expain_LIST = [
-    "조직의 우두머리이자 느와르 영화의 주인공인 당신은 회전력 빠른 두뇌와 철저한 계획으로 자신의 조직을 최고로 끌어올립니다. 사실 느와르 영화는 이 사람들을 위해 만들어졌다고 해도 과언이 아닐 정도로 당신은 느와르 영화 주인공에 잘 어울립니다. 감정에 잘 휘둘리지 않고 자신의 속마음을 남에게 잘 이야기 하지 않습니다. 때문에 당신의 조직원들은 당신을 두려워하기도 합니다만, 사실 당신에게 감성적인 면도 있다는 것은 눈치채지 못하지요. 무언가를 해결해야 할 때면 다른 사람에게 조언을 구하기 보단 혼자서 해결책을 찾아내곤합니다. 이런 당신을 알고 있는 사람들이라면 당신에 대해 이렇게 말하죠. \"그를 함부로 건드려선 안돼.\"",
 
-    "계산적이고 합리적인 당신의 조직의 2인자, 보스의 오른팔입니다. 무언가를 감정적으로 판단하기 보다는 객관적으로 상황을 바라봅니다. 교묘하게 남을 조작하는 능력이 뛰어나기 때문에 다른 조직과 마찰이 일어나더라도 능력껏 상황을 타개합니다. 계획에 차질이 생기는 것을 매우 싫어합니다. 마치 항해사처럼 조직을 자신이 생각하는 목표를 향해 몰고갑니다. 때론 보스의 결정이 탐탁지 않을 때도 있지만, 굳이 반기를 들지는 않습니다. 그렇지만 당신은 언제든 그를 자리에서 몰아내고 자신이 1인자가 될 가능성을 염두에 두고있습니다. 그만큼 당신에게는 리더의 자질이 있으며, 모두가 당신의 능력을 인정하고 당신 또한 그 사실을 인지하고 있습니다. 이런 당신을 알고 있는 사람들은 이렇게 말합니다. \"그가 등을 돌리면, 조직은 난파된 배처럼 수면 아래로 가라앉게 되겠지.\"",
+const rating_LIST = [
+    //INTJ
+    [5, 4, 1],
+    //ESTJ
+    [4, 3, 3],
+    //INFJ
+    [5, 1, 4],
+    //ISFJ
+    [3, 1, 5],
+    //ISTJ
+    [4, 3, 3],
+    //ISFP
+    [3, 2, 4],
+    //INFP
+    [2, 2, 4],
+    //ENFJ
+    [3, 3, 5],
+    //ISTP
+    [4, 2, 2],
+    //INTP
+    [4, 2, 1],
+    //ENTJ
+    [5, 3, 2],
+    //ENFP
+    [2, 3, 5],
+    //ENTP
+    [3, 4, 2],
+    //ESTP
+    [2, 5, 4],
+    //ESFP
+    [1, 5, 5],
+    //ESFJ
+    [3, 2, 5],
+];
+
+const expain_LIST = [
+    "조직의 우두머리이자 느와르 영화의 주인공인 당신은 회전력 빠른 두뇌와 철저한 계획으로 자신의 조직을 최고로 끌어올립니다. 사실 느와르 영화는 이 사람들을 위해 만들어졌다고 해도 과언이 아닐 정도로 당신은 느와르 영화 주인공에 잘 어울립니다. 고독하고, 냉철하며, 옳고 그름이 확실합니다. 감정에 잘 휘둘리지 않고 자신의 속마음을 남에게 잘 이야기 하지 않아 아끼던 조직원을 잃어도 별 반응을 보이지 않습니다. 때문에 당신의 조직원들은 당신을 두려워하기도 합니다만, 자신에게 감성적인 면도 있다는 사실은 스스로만이 알고있지요. 무언가를 해결해야 할 때면 다른 사람에게 조언을 구하기 보단 혼자서 해결책을 찾아내곤합니다. 이런 당신을 알고 있는 사람들이라면 당신에 대해 이렇게 말하죠. \"그를 함부로 건드려선 안돼. 그는 꼭 암살을 당해도 언제 그랬냐는 듯 살아돌아올 것 같단 말이야.\"",
+
+    "계산적이고 합리적인 당신의 조직의 2인자, 보스의 오른팔입니다. 무언가를 감정적으로 판단하기 보다는 객관적으로 상황을 바라봅니다. 교묘하게 남을 조작하는 능력이 뛰어나기 때문에 다른 조직과 마찰이 일어나더라도 능력껏 상황을 타개합니다. 계획에 차질이 생기는 것을 매우 싫어하며, 마치 항해사처럼 조직을 자신이 생각하는 목표를 향해 몰고갑니다. 때론 보스의 결정이 탐탁지 않을 때도 있지만, 굳이 반기를 들지는 않습니다. 그렇지만 당신은 언제든 그를 자리에서 몰아내고 자신이 1인자가 될 가능성을 염두에 두고있습니다. 그만큼 당신에게는 리더의 자질이 있으며, 모두가 당신의 능력을 인정하고 당신 또한 그 사실을 인지하고 있습니다. 이런 당신을 알고 있는 사람들은 이렇게 말합니다. \"그가 등을 돌리면, 조직은 난파된 배처럼 수면 아래로 가라앉게 되겠지.\"",
 
     "보스가 죽자, 가장 먼저 거론된 것은 당신이었습니다. 사실 보스가 죽기 오래 전부터 당신에게는 이 조직의 후계자가 될 자질이 충분히 있었습니다. 겉으로는 유해보이고 한없이 착해보이지만 알고보면 모두가 놀랄만큼 유능하고 영악한 속내를 지니고 있습니다. 그렇기 때문에 당신의 이런 이면을 알지 못하는 사람들이 절대 선을 넘게 두지는 않습니다. 눈치가 빠르고 주위에 쉽게 적응합니다. 당신은 다정한 보스입니다만, 마음의 문을 쉽게 열지 않기 때문에 자신의 속내를 털어놓을 진정한 내 사람이 없는 고독한 보스이기도 합니다. 이런 당신을 알고 있는 사람들은 당신에 대해 이렇게 말합니다. \"하룻강아지인 줄 알았는데, 알고보니 범이었단 사실을 그 누가 알았겠어.\"",
 
@@ -58,7 +99,6 @@ const expain_LIST = [
     "조직의 정신적 지주이자 어머니와도 같은 존재인 당신은 조직의 대모입니다. 많은 조직원들, 심지어 보스조차도 당신에게 매우 많이 의지하며 당신으로부터 많은 조언을 구하기도 합니다. 실질적인 지식을 얻기 위함도 있지만, 정신적인 위안을 받고자하는 이유가 더 큽니다. 그만큼 상대방의 말을 잘 들어주는 성격입니다. 다른 조직과 대체적으로 우호적인 관계를 가지고 있습니다. 따라서 다른 조직과의 갈등이 생겨도 이를 좋게 해결하고자 하며, 상대 또한 당신을 봐서 참는다는 뉘앙스로 한발 물러납니다. 하지만 누군가 선을 넘는다면 냉정하게 돌변하며 참고만 있지는 않습니다. 나의 조직이 곧 나의 가족이라고 여기기 때문입니다. 당신을 알고 있는 사람들은 이렇게 말합니다. \"그는 조직을 절대 배신하지 않아. 만약 그렇게 된다면 그 조직은 무너지고 말거란 걸 아마 그 자신도 매우 잘 알고 있을 거야.\""
 ];
 
-// ISTP 그림 변경해야함
 // "INTJ" : "조직의 우두머리",
 // "ESTJ" : "조직의 2인자",
 // "INFJ" : "조직의 후계자",
@@ -102,6 +142,36 @@ function handleRestart(){
     location.href = link;
 }
 
+function ratingGreeting(idx){
+    let fullStar = "", emptStar = "";
+
+    for(let i = 0; i < parseInt(rating_LIST[idx][0]); i++){
+        fullStar += "★";
+    }
+    for(let i = 0; i < 5 - parseInt(rating_LIST[idx][0]); i++){
+        fullStar += "☆";
+    }
+    brainRate.innerText = "두뇌 " + fullStar + emptStar;
+
+    fullStar = "", emptStar = "";
+    for(let i = 0; i < parseInt(rating_LIST[idx][1]); i++){
+        fullStar += "★";
+    }
+    for(let i = 0; i < 5 - parseInt(rating_LIST[idx][1]); i++){
+        fullStar += "☆";
+    }
+    powerRate.innerText = "힘 " + fullStar + emptStar;
+
+    fullStar = "", emptStar = "";
+    for(let i = 0; i < parseInt(rating_LIST[idx][2]); i++){
+        fullStar += "★";
+    }
+    for(let i = 0; i < 5 - parseInt(rating_LIST[idx][2]); i++){
+        fullStar += "☆";
+    }
+    relRate.innerText = "대인관계 " + fullStar + emptStar;
+}
+
 function worstMatchGreeting(idx){
     worstMatchImg.src = "/images/" +  match_LIST[idx].worst + ".png";
 }
@@ -115,11 +185,12 @@ function resultGreeting(){
     const userMBTI = localStorage.getItem(USER_MBTI);
 
     resultImg.src = "/images/" + userMBTI +".png";
-    for (var mbti in title_LIST){
+    for (let mbti in title_LIST){
         if(mbti == userMBTI){
             resultTitle.innerText = title_LIST[mbti];
             resultExplain.innerText = expain_LIST[index];
-
+            
+            ratingGreeting(index);
             bestMatchGreeting(index);
             worstMatchGreeting(index);
 

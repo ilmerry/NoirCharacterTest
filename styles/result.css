@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
 body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width:100%;
     background-color: rgb(36, 39, 38);
     font-family: 'Song Myung', serif;
@@ -16,7 +20,8 @@ body{
 }
 
 .css-header{
-    display:block;
+    position: relative;
+    display: block;
 }
 
 .css-title{
@@ -26,50 +31,57 @@ body{
     color: white;
 }
 
-.css-main{
-    display:block;
-}
-
 .css-border{
-    position: absolute;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
-    left: 50%;
-    top: 105%;
-    transform: translate(-50%, -50%);
-    margin-top: 70px;
-    width: 60%;
-    height: 180vh;
+    margin-top: 4vh;
+    width: 60vw;
+    height: 200vh;
     border-radius: 10px;
 }
 
 .css-resultImg{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 16%;
-    left: 50%;
+    position: relative;
     width: 50vh;
 }
 
 .css-resultTitle{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 29%;
-    left: 50%;
+    position: relative;
+    margin-top: -3vh;
     color: black;
     font-size: 21px;
     opacity: 0.5;
     font-family: 'Song Myung', serif;
 }
 
+.css-ratings{
+    position: relative;
+    text-align: center;
+    margin-top: 4vh;
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
 .css-resultExplain{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
-    width: 75%;
+    position: relative;
+    margin-top: 10vh;
+    width: 50vh;
     color: black;
     font-size: 20px;
     font-family: 'Song Myung', serif;
+}
+
+.css-match{
+    position:relative;
+    display: inline;
+    margin-top: 10vh;
+    margin-bottom: 30vh;
+    width: 100%;
 }
 
 .css-bestMatch{
@@ -117,11 +129,9 @@ body{
 }
 
 .css-restart{
-    position: absolute;
-    transform: translate(-50%, -50%);
-    margin-top: 30px;
-    top: 90%;
-    left: 50%;
+    position: relative;
+    margin-top: 7vh;
+    bottom: 10vh;
     width: 60%;
     padding: 16px 48px;
     font-size: large;
@@ -144,15 +154,11 @@ body{
 }
 
 .css-footer{
-    display: block;
+    position: relative;
 }
 
 .css-license{
-    position:absolute;
     font-size: 12px;
     color:white;
-    left: 43%;
-    top: 230%;
-    transform: translate(-50%, -50%);
     text-align: center;
 }
